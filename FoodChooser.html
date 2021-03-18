@@ -1,0 +1,52 @@
+<html>
+<head>
+  <script>
+  function ageCheck()
+  {
+     document.getElementById("message").innerHTML = '';
+     var year = document.getElementById("byear").value;
+     year = parseInt(year);
+     var age = 2021 - year;
+     if (age > 200)
+     {
+           document.getElementById('message').innerHTML = "Error you are dead";
+     }
+     else if(age > 10)
+     {
+            document.getElementById('pic1').innerHTML = "<img src = 'pizza.jpg' width = 100px onclick =Badfood()>";
+                document.getElementById('pic2').innerHTML = "<img src = 'steak.jpg' width = 100px onclick =Badfood()>";
+                    document.getElementById('pic3').innerHTML = "<img src = 'BLT.jpg' width = 100px onclick =HealthyFood()>";
+     }
+     else if(age < 0)
+     {
+        document.getElementById('message').innerHTML = "<hr> Error you haven't been born yet</hr>";
+     }
+     else if (age < 10)
+     {
+       document.getElementById('pic1').innerHTML = "<img src = 'chickenstrips.jpg' width = 100px onclick =Badfood()>";
+           document.getElementById('pic2').innerHTML = "<img src = 'PB&J.jpg' width = 100px onclick =HealthyFood()>";
+               document.getElementById('pic3').innerHTML = "<img src = 'macncheese.jpg' width = 100px onclick =Badfood()>";
+
+     }
+
+  }
+  function Badfood()
+  {
+       document.getElementById('message').innerHTML = "That's unhealthy";
+  }
+  function HealthyFood()
+  {
+        document.getElementById('message').innerHTML = "Yes, this is healthy";
+  }
+</script>
+  <body>
+  <h1> Food Chooser </h1>
+  <p> Type in your birth year to get food options based on your age </p>
+  <input type = "text" placeholder = "Type birth year" id = "byear">
+  <input type = "button" value = "Submit" onclick = "ageCheck()" = "sButton">
+  <p id = "pic1"></p>
+  <p id = "pic2"></p>
+  <p id = "pic3"></p>
+  <p id = "message"></p>
+  </body>
+  </html>
